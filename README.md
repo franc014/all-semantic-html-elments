@@ -1,43 +1,18 @@
-# Astro Starter Kit: Basics
+# Review of the HTML semantic elements
 
-```
-npm create astro@latest -- --template basics
-```
+This Website documents all the HTML semantic elements.
+Please, feel free to send your PR with content related to each element; about what you have learned and want to share.
+This project is being built with the awesome Astro Build SSG.
+I'm using MDX for the content. You can see the elements' documentation defined on each file
+in /src/content/elements
+In the body of each .md file, You can add anything you consider relevant; including deletions and additions to the present content.
+Please, don't add fields to the frontmatter section of each file because it's already validated against types.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 👀 Want to learn more about Astro?
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
-
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+## 🧞 Astro Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -49,7 +24,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying     |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
