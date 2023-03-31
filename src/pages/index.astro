@@ -14,7 +14,7 @@ const allElements = await getCollection("elements");
       All semantic elements
     </h1>
 
-    <ul role="list" class="flex flex-col gap-10">
+    <ul role="list" class="flex flex-col gap-20 md:grid md:grid-cols-2">
       {
         allElements.map(async (el) => {
           const { Content } = await el.render();
