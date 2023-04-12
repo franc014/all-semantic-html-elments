@@ -1,0 +1,109 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Disclosure Widgets Native Demo">
+  <main>
+    <h1 class="mb-8">Disclosure Widgets</h1>
+    <h2 class="mb-8">Native</h2>
+    <details class="mb-10">
+      <summary>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 inline-block"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+        </svg>
+
+        <span>More info...</span></summary
+      >
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+        mollitia, voluptates doloremque magni at animi nam reprehenderit ipsam,
+        error, eum debitis fugit perspiciatis reiciendis quis corrupti ipsum
+        fuga ex est.
+      </p>
+    </details>
+    <h2 class="mb-8">Custom</h2>
+
+    <div class="custom-disclosure">
+      <button aria-controls="disclosure-content" aria-expanded="false">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 inline-block"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+        </svg>
+        <span>More info...</span>
+      </button>
+      <div id="disclosure-content" hidden>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe, neque
+          atque! Voluptatem voluptas dolore veritatis facere, incidunt laborum
+          quisquam temporibus suscipit. Dolor asperiores praesentium veniam
+          atque est natus saepe nulla.
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary {
+    list-style: none;
+  }
+
+  details summary svg {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  details[open] summary svg {
+    transform: rotate(90deg);
+  }
+
+  .custom-disclosure button svg {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .custom-disclosure button[aria-expanded="true"] svg {
+    transform: rotate(90deg);
+  }
+</style>
+
+<script>
+  const discWidget = document.querySelector(".custom-disclosure");
+  let triggerBtn = discWidget.querySelector("button");
+  const panelId = triggerBtn.getAttribute("aria-controls");
+  let panel = document.querySelector(`#${panelId}`);
+
+  function togglePannel() {
+    if (this.getAttribute("aria-expanded") === "false") {
+      triggerBtn.setAttribute("aria-expanded", "true");
+      panel.removeAttribute("hidden");
+    } else {
+      triggerBtn.setAttribute("aria-expanded", "false");
+      panel.setAttribute("hidden", "true");
+    }
+  }
+
+  triggerBtn.addEventListener("click", togglePannel);
+</script>
