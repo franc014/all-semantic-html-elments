@@ -1,0 +1,125 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Accordion component">
+  <main>
+    <h1 class="mb-8">Accordion component.</h1>
+    <div role="group" aria-labelledby="grouped-content">
+      <h2 id="grouped-content">Exposing the disclosure widgets as a group</h2>
+      <details>
+        <summary> Accordion First Item</summary>
+        <p>
+          First content: Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Quisquam quasi quod ullam placeat, eum blanditiis ratione ex
+          modi perferendis quas impedit itaque earum maiores animi aut magnam
+          debitis id veritatis.
+        </p>
+      </details>
+      <details>
+        <summary> Accordion Second Item</summary>
+        <p>
+          Second content: Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Quisquam quasi quod ullam placeat, eum blanditiis ratione ex
+          modi perferendis quas impedit itaque earum maiores animi aut magnam
+          debitis id veritatis.
+        </p>
+      </details>
+      <details>
+        <summary> Accordion Third Item</summary>
+        <p>
+          Third content: Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Quisquam quasi quod ullam placeat, eum blanditiis ratione ex
+          modi perferendis quas impedit itaque earum maiores animi aut magnam
+          debitis id veritatis.
+        </p>
+      </details>
+      <details>
+        <summary> Accordion Fourth Item</summary>
+        <p>
+          Fourth content: Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Quisquam quasi quod ullam placeat, eum blanditiis ratione ex
+          modi perferendis quas impedit itaque earum maiores animi aut magnam
+          debitis id veritatis.
+        </p>
+      </details>
+    </div>
+
+    <section role="group" aria-labelledby="grouped-content" data-accordion>
+      <!-- <h2 id="grouped-content">
+        Exposing the disclosure widgets as a landmark region
+      </h2> -->
+
+      <span id="grouped-content" hidden>
+        Exposing the disclosure widgets as a landmark region
+      </span>
+
+      <details>
+        <summary> Accordion First Item</summary>
+        <p>
+          First content: Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Quisquam quasi quod ullam placeat, eum blanditiis ratione ex
+          modi perferendis quas impedit itaque earum maiores animi aut magnam
+          debitis id veritatis.
+        </p>
+      </details>
+      <details>
+        <summary> Accordion Second Item</summary>
+        <p>
+          Second content: Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Quisquam quasi quod ullam placeat, eum blanditiis ratione ex
+          modi perferendis quas impedit itaque earum maiores animi aut magnam
+          debitis id veritatis.
+        </p>
+      </details>
+      <details>
+        <summary> Accordion Third Item</summary>
+        <p>
+          Third content: Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Quisquam quasi quod ullam placeat, eum blanditiis ratione ex
+          modi perferendis quas impedit itaque earum maiores animi aut magnam
+          debitis id veritatis.
+        </p>
+      </details>
+      <details>
+        <summary> Accordion Fourth Item</summary>
+        <p>
+          Fourth content: Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Quisquam quasi quod ullam placeat, eum blanditiis ratione ex
+          modi perferendis quas impedit itaque earum maiores animi aut magnam
+          debitis id veritatis.
+        </p>
+      </details>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  details {
+    @apply mb-6 pb-6 border-b-2;
+  }
+
+  summary {
+    @apply pb-4;
+  }
+</style>
+
+<script>
+  const section = document.querySelector("[data-accordion]");
+  const accordionItems = section.querySelectorAll("details");
+
+  console.log(accordionItems);
+
+  accordionItems.forEach((item, index) => {
+    function hideContent() {
+      for (let i = 0; i < accordionItems.length; i++) {
+        // ...except the current one...
+        if (i === index) continue;
+        // ...and close them.
+        accordionItems[i].removeAttribute("open");
+      }
+    }
+
+    item.addEventListener("click", hideContent);
+  });
+</script>
